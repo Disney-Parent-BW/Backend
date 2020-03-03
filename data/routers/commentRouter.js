@@ -93,7 +93,7 @@ router.post('/users/:userid/requests/:requestid/comments', [restricted], (req, r
   }
 })
 
-// UPDATE A COMMENT
+// UPDATE A COMMENT.
 // ADD ERROR FOR RECEIVING ID THAT IS NOT AN INTEGER???
 router.put('/comments/:id', [restricted], (req, res) => {
   const id = req.params.id;
