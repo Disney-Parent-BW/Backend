@@ -3,6 +3,7 @@ const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
+const session = require('express-session'); //npm i express-session to install
 
 const authRouter = require('../data/routers/authRouter');
 const requestRouter = require('../data/routers/requestRouter');
@@ -32,5 +33,10 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api', requestRouter);
 server.use('/api', commentRouter);
+
+server.get("/", (req, res) => {
+    //console.log(req.session);
+    res.json({api:"up"});
+});
 
 module.exports = server;
